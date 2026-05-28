@@ -1,0 +1,2492 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LumiÃ¨re | Skincare Brand</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+    /* Color Palette - Vibrant, Feminine, Aesthetic */
+    --primary-color: #ff8fab; /* Vibrant Pink */
+    --primary-light: #fb6f92; /* Darker Pink */
+    --secondary-color: #ffc2d1; /* Soft Peach / Pink */
+    --accent-color: #ffe5ec; /* Very Light Pink/Purple */
+    --warning: #ffb5a7; /* Soft Orange / Peach */
+    
+    --text-dark: #2b2d42;
+    --text-medium: #4a4e69;
+    --text-light: #8d99ae;
+    
+    --bg-color: #fff0f3;
+    --surface-color: #ffffff;
+    
+    --font-main: 'Outfit', sans-serif;
+    
+    --transition: all 0.3s ease-in-out;
+    --shadow-sm: 0 2px 8px rgba(255, 143, 171, 0.1);
+    --shadow-md: 0 5px 15px rgba(255, 143, 171, 0.15);
+    --shadow-lg: 0 10px 30px rgba(255, 143, 171, 0.2);
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --radius-full: 9999px;
+}
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--text-dark);
+    background-color: var(--bg-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+h1 { font-size: 3rem; }
+h2 { font-size: 2.5rem; }
+h3 { font-size: 2rem; }
+
+/* Utility Classes */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.text-center { text-align: center; }
+.mt-1 { margin-top: 1rem; }
+.mt-2 { margin-top: 2rem; }
+.mt-3 { margin-top: 3rem; }
+.mb-1 { margin-bottom: 1rem; }
+.mb-2 { margin-bottom: 2rem; }
+.mb-3 { margin-bottom: 3rem; }
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: var(--radius-full);
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+    font-family: var(--font-main);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: var(--shadow-md);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-light);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Navbar */
+.navbar {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-light);
+    letter-spacing: -0.5px;
+}
+
+.logo span {
+    color: var(--warning);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-links a {
+    font-weight: 500;
+    color: var(--text-medium);
+    position: relative;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--primary-color);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+.nav-icons {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.nav-icon {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+}
+
+.nav-icon:hover {
+    color: var(--primary-color);
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 0.7rem;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+}
+
+.mobile-menu-btn {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-dark);
+}
+
+/* Base Page Setup for fixed navbar */
+main {
+    margin-top: 80px;
+    min-height: calc(100vh - 80px - 300px); /* 300px approx footer */
+}
+
+/* Footer */
+.footer {
+    background-color: white;
+    padding: 4rem 0 2rem;
+    margin-top: 4rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.footer-col h3, 
+.footer-col h4 {
+    margin-bottom: 1.5rem;
+    color: var(--text-dark);
+    font-size: 1.2rem;
+}
+
+.footer-col p {
+    color: var(--text-medium);
+    margin-bottom: 1rem;
+}
+
+.footer-links li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+    color: var(--text-medium);
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+    padding-left: 5px;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary-light);
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-3px);
+}
+
+.newsletter-form {
+    display: flex;
+    margin-top: 1rem;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--secondary-color);
+    border-radius: var(--radius-full) 0 0 var(--radius-full);
+    outline: none;
+    font-family: var(--font-main);
+}
+
+.newsletter-form input:focus {
+    border-color: var(--primary-color);
+}
+
+.newsletter-form button {
+    padding: 0.8rem 1.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 0 var(--radius-full) var(--radius-full) 0;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.newsletter-form button:hover {
+    background-color: var(--primary-light);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid var(--secondary-color);
+    color: var(--text-medium);
+    font-size: 0.9rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease forwards;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 2rem; }
+    
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        flex-direction: column;
+        padding: 2rem 0;
+        box-shadow: var(--shadow-md);
+        gap: 1.5rem;
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .mobile-menu-btn {
+        display: block;
+    }
+    
+    .nav-icons {
+        margin-right: 1rem;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* -------------------------------------
+   HOME PAGE STYLES 
+   ------------------------------------- */
+
+/* Hero Section */
+.hero {
+    padding: 2rem 0 4rem;
+}
+.hero-container {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+.hero-content {
+    flex: 1;
+}
+.hero-content p {
+    font-size: 1.1rem;
+    color: var(--text-medium);
+    margin-bottom: 2rem;
+}
+.hero-image {
+    flex: 1;
+}
+
+/* Category Grid */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+.category-card {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    display: block;
+    box-shadow: var(--shadow-sm);
+}
+.category-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+.category-card:hover img {
+    transform: scale(1.05);
+}
+.category-card h3 {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 0.5rem 1.5rem;
+    border-radius: var(--radius-full);
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--text-dark);
+}
+
+/* Product Grid */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+.product-card {
+    background-color: var(--surface-color);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+.product-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-5px);
+}
+.product-img {
+    position: relative;
+    background-color: white;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+.product-img img {
+    height: 250px;
+    object-fit: contain;
+    transition: var(--transition);
+}
+.product-card:hover .product-img img {
+    transform: scale(1.05);
+}
+.product-img .badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: var(--warning);
+    color: white;
+    padding: 0.2rem 0.8rem;
+    border-radius: var(--radius-full);
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+.product-info {
+    padding: 1.5rem;
+    text-align: center;
+}
+.product-info h4 {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+.product-info .price {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+/* Testimonials */
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+.testimonial-card {
+    background-color: var(--surface-color);
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+    position: relative;
+}
+.testimonial-card .stars {
+    color: #ffd166;
+    margin-bottom: 1rem;
+}
+.testimonial-card p {
+    font-style: italic;
+    margin-bottom: 1rem;
+    color: var(--text-medium);
+}
+.testimonial-card h4 {
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Home Responsive additions */
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 2rem;
+    }
+    .hero-content p {
+        margin: 0 auto 2rem;
+    }
+    .hero-content div {
+        justify-content: center;
+    }
+}
+
+/* -------------------------------------
+   ABOUT PAGE STYLES 
+   ------------------------------------- */
+
+.story-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.mission-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+.mission-card {
+    background-color: white;
+    padding: 3rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+    transition: var(--transition);
+}
+.mission-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.philosophy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+}
+
+/* About Responsive */
+@media (max-width: 768px) {
+    .story-grid, .mission-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* -------------------------------------
+   PRODUCTS PAGE STYLES 
+   ------------------------------------- */
+
+.page-header {
+    background-color: var(--secondary-color);
+    padding: 3rem 0;
+}
+
+.shop-container {
+    display: flex;
+    gap: 3rem;
+}
+
+.shop-sidebar {
+    width: 250px;
+    flex-shrink: 0;
+}
+
+.filter-group h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+.filter-group ul {
+    list-style: none;
+}
+
+.filter-group li {
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+}
+
+.filter-group a {
+    color: var(--text-medium);
+}
+
+.filter-group a:hover, .filter-group a.active {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.filter-group input[type="checkbox"] {
+    margin-right: 0.5rem;
+    accent-color: var(--primary-color);
+    width: 16px;
+    height: 16px;
+}
+
+.filter-group label {
+    cursor: pointer;
+    color: var(--text-medium);
+}
+
+.shop-content {
+    flex: 1;
+}
+
+.shop-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-medium);
+}
+
+.sort-select {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--secondary-color);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-main);
+    color: var(--text-dark);
+    outline: none;
+}
+
+.sort-select:focus {
+    border-color: var(--primary-color);
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.page-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: var(--surface-color);
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: var(--transition);
+    box-shadow: var(--shadow-sm);
+}
+
+.page-btn:hover, .page-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Shop Responsive */
+@media (max-width: 992px) {
+    .shop-container {
+        flex-direction: column;
+    }
+    .shop-sidebar {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+    .filter-group {
+        flex: 1;
+        min-width: 200px;
+    }
+}
+
+/* -------------------------------------
+   PRODUCT DETAILS PAGE STYLES 
+   ------------------------------------- */
+
+.breadcrumbs {
+    color: var(--text-medium);
+    font-size: 0.9rem;
+}
+
+.breadcrumbs a {
+    color: var(--primary-light);
+    font-weight: 500;
+}
+
+.product-details-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.product-gallery .main-image {
+    width: 100%;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    object-fit: cover;
+    aspect-ratio: 4/5;
+}
+
+.thumbnail-row {
+    display: flex;
+    gap: 1rem;
+}
+
+.thumbnail-row img {
+    width: calc(25% - 0.75rem);
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    opacity: 0.6;
+    transition: var(--transition);
+}
+
+.thumbnail-row img.active, .thumbnail-row img:hover {
+    opacity: 1;
+    border: 2px solid var(--primary-color);
+}
+
+.product-info-detail h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+.price-large {
+    font-size: 2rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.add-to-cart-wrapper {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--secondary-color);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    background-color: white;
+}
+
+.quantity-control button {
+    background: none;
+    border: none;
+    width: 40px;
+    height: 45px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: var(--text-dark);
+}
+
+.quantity-control input {
+    width: 40px;
+    text-align: center;
+    border: none;
+    font-family: var(--font-main);
+    font-size: 1.1rem;
+    outline: none;
+    background-color: transparent;
+}
+
+.add-to-cart-wrapper .btn {
+    flex: 1;
+    padding: 1rem;
+    font-size: 1.1rem;
+}
+
+.product-meta p {
+    margin-bottom: 0.5rem;
+    color: var(--text-medium);
+}
+
+.accordion {
+    border-top: 1px solid var(--secondary-color);
+}
+
+.accordion-item {
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+.accordion-header {
+    padding: 1.5rem 0;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    color: var(--text-dark);
+    transition: var(--transition);
+}
+
+.accordion-header:hover {
+    color: var(--primary-color);
+}
+
+.accordion-content {
+    padding-bottom: 1.5rem;
+    color: var(--text-medium);
+}
+
+.reviews-section {
+    border-top: 1px solid var(--secondary-color);
+    padding-top: 3rem;
+}
+
+.review-card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.review-card:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.review-card h4 {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+.review-card .reviewer {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.review-card .stars {
+    color: #ffd166;
+}
+
+@media (max-width: 992px) {
+    .product-details-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+/* -------------------------------------
+   AUTH PAGE STYLES 
+   ------------------------------------- */
+
+.auth-container {
+    min-height: calc(100vh - 80px - 300px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 1.5rem;
+    background-color: var(--bg-color);
+}
+
+.auth-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    overflow: hidden;
+    max-width: 1000px;
+    width: 100%;
+}
+
+.auth-image {
+    flex: 1;
+    display: none;
+}
+
+.auth-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.auth-content {
+    flex: 1;
+    padding: 4rem 3rem;
+}
+
+.auth-tabs {
+    display: flex;
+    border-bottom: 2px solid var(--secondary-color);
+    margin-bottom: 2rem;
+}
+
+.auth-tab {
+    flex: 1;
+    background: none;
+    border: none;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-medium);
+    cursor: pointer;
+    font-family: var(--font-main);
+    position: relative;
+    transition: var(--transition);
+}
+
+.auth-tab.active {
+    color: var(--primary-color);
+}
+
+.auth-tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--secondary-color);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-main);
+    outline: none;
+    transition: var(--transition);
+    background-color: #fafafa;
+}
+
+.form-group input:focus {
+    border-color: var(--primary-color);
+    background-color: white;
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.form-options label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-medium);
+}
+
+.form-options input[type="checkbox"] {
+    accent-color: var(--primary-color);
+}
+
+.forgot-link {
+    color: var(--primary-light);
+}
+
+.forgot-link:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+    .auth-image {
+        display: block;
+    }
+}
+@media (max-width: 768px) {
+    .auth-content {
+        padding: 3rem 1.5rem;
+    }
+}
+
+/* -------------------------------------
+   CART PAGE STYLES 
+   ------------------------------------- */
+
+.cart-container {
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+}
+
+.cart-items {
+    flex: 2;
+}
+
+.cart-header {
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--secondary-color);
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.cart-item {
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr;
+    align-items: center;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+.cart-product {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.cart-product img {
+    width: 80px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-sm);
+}
+
+.cart-product h4 {
+    margin-bottom: 0.3rem;
+    font-size: 1.1rem;
+    color: var(--text-dark);
+}
+
+.cart-product .price {
+    color: var(--text-medium);
+    margin-bottom: 0.5rem;
+}
+
+.remove-btn {
+    background: none;
+    border: none;
+    color: var(--warning);
+    cursor: pointer;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    transition: var(--transition);
+}
+
+.remove-btn:hover {
+    color: red;
+}
+
+.cart-total-price {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+}
+
+.cart-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart-summary {
+    flex: 1;
+    background-color: var(--surface-color);
+    padding: 2rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+}
+
+.cart-summary h3 {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--secondary-color);
+    color: var(--text-dark);
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    color: var(--text-medium);
+}
+
+.summary-row.total-row {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--secondary-color);
+}
+
+@media (max-width: 992px) {
+    .cart-container {
+        flex-direction: column;
+    }
+    .cart-summary {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .cart-header {
+        display: none;
+    }
+    .cart-item {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    .cart-quantity, .cart-total-price {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .cart-total-price::before {
+        content: 'Total: ';
+        color: var(--text-medium);
+        font-weight: normal;
+    }
+}
+
+/* -------------------------------------
+   CHECKOUT PAGE STYLES 
+   ------------------------------------- */
+
+.checkout-container {
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+}
+
+.billing-details {
+    flex: 2;
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.form-row {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.order-panel {
+    flex: 1;
+}
+
+.order-summary-box {
+    background-color: var(--surface-color);
+    padding: 2rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+}
+
+.border-bottom-light {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--bg-color);
+}
+
+.payment-methods {
+    border-top: 1px solid var(--secondary-color);
+    padding-top: 1.5rem;
+}
+
+.payment-option {
+    background-color: var(--bg-color);
+    padding: 1rem;
+    border-radius: var(--radius-sm);
+    margin-bottom: 0.5rem;
+}
+
+.payment-option label {
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.payment-option input[type="radio"] {
+    margin-right: 0.5rem;
+    accent-color: var(--primary-color);
+}
+
+@media (max-width: 992px) {
+    .checkout-container {
+        flex-direction: column;
+    }
+    .billing-details, .order-panel {
+        width: 100%;
+    }
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
+/* -------------------------------------
+   CONTACT PAGE STYLES 
+   ------------------------------------- */
+
+.contact-container {
+    display: flex;
+    gap: 4rem;
+    align-items: flex-start;
+}
+
+.contact-info {
+    flex: 1;
+    background-color: var(--surface-color);
+    padding: 3rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+}
+
+.info-item {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.info-item .icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    transition: var(--transition);
+}
+
+.info-item:hover .icon {
+    transform: scale(1.1);
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.info-item h4 {
+    margin-bottom: 0.2rem;
+    font-size: 1.1rem;
+    color: var(--text-dark);
+}
+
+.info-item p {
+    color: var(--text-medium);
+    font-size: 0.95rem;
+}
+
+.contact-form-wrapper {
+    flex: 1.5;
+    background-color: white;
+    padding: 3.5rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+}
+
+@media (max-width: 992px) {
+    .contact-container {
+        flex-direction: column;
+    }
+    .contact-info, .contact-form-wrapper {
+        width: 100%;
+    }
+    .contact-form-wrapper {
+        padding: 2.5rem 1.5rem;
+    }
+}
+
+
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="navbar">
+        <div class="container">
+            <a href="#home" class="logo">Lumi<span>Ã¨re</span></a>
+            
+            <nav class="nav-links">
+                <a href="#home" class="active">Home</a>
+                <a href="#about">About</a>
+                <a href="#products">Products</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            
+            <div class="nav-icons">
+                <a href="#login" class="nav-icon" title="Account"><i class="fa-regular fa-user"></i></a>
+                <a href="#cart" class="nav-icon" title="Cart">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="cart-count">2</span>
+                </a>
+                <div class="mobile-menu-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main>
+        
+        <!-- =========================
+             1. HOME SECTION
+        ========================= -->
+        <section id="home">
+            <!-- Hero Section -->
+            <div class="hero">
+                <div class="container hero-container">
+                    <div class="hero-content fade-in">
+                        <h1>Reveal Your Natural Glow</h1>
+                        <p>Discover our organic, cruelty-free skincare routine designed for sensitive skin. Experience the magic of nature.</p>
+                        <div style="display:flex; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap;">
+                            <a href="#products" class="btn btn-primary">Shop Now</a>
+                            <a href="#about" class="btn btn-outline">Our Story</a>
+                        </div>
+                    </div>
+                    <div class="hero-image fade-in" style="animation-delay: 0.2s">
+                        <img src="https://placehold.co/600x600/fecfef/4a4e69?text=Skincare+Hero+Products" alt="Various Skincare Products" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categories Section -->
+            <div class="categories container mt-3 mb-3">
+                <div class="section-title text-center mb-2">
+                    <h2>Shop by Category</h2>
+                    <p style="color: var(--text-medium)">Find exactly what your skin needs</p>
+                </div>
+                <div class="category-grid">
+                    <a href="#products" class="category-card">
+                        <img src="https://placehold.co/400x300/ffc2d1/2b2d42?text=Face+Care" alt="Face Care">
+                        <h3>Face Care</h3>
+                    </a>
+                    <a href="#products" class="category-card">
+                        <img src="https://placehold.co/400x300/ffb5a7/2b2d42?text=Body+Care" alt="Body Care">
+                        <h3>Body Care</h3>
+                    </a>
+                    <a href="#products" class="category-card">
+                        <img src="https://placehold.co/400x300/ffe5ec/2b2d42?text=Hair+Care" alt="Hair Care">
+                        <h3>Hair Care</h3>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Featured Products -->
+            <div class="featured-products container mb-3 mt-3">
+                <div class="section-title text-center mb-2">
+                    <h2>Featured Products</h2>
+                    <p style="color: var(--text-medium)">Our best sellers loved by everyone</p>
+                </div>
+                <div class="product-grid">
+                    <!-- Product 1 -->
+                    <div class="product-card">
+                        <div class="product-img">
+                            <a href="#product-details">
+                                <img src="https://placehold.co/300x350/fff/fb6f92?text=Hydrating+Serum" alt="Hydrating Serum">
+                            </a>
+                        </div>
+                        <div class="product-info">
+                            <a href="#product-details"><h4>Rose Hydrating Serum</h4></a>
+                            <div class="price">$34.00</div>
+                            <button class="btn btn-primary add-to-cart-btn" style="width: 100%; margin-top: 1rem; padding: 0.6rem 0;">Add to Cart</button>
+                        </div>
+                    </div>
+                    <!-- Product 2 -->
+                    <div class="product-card">
+                        <div class="product-img">
+                            <div class="badge">Bestseller</div>
+                            <a href="#product-details">
+                                <img src="https://placehold.co/300x350/fff/fb6f92?text=Night+Cream" alt="Night Cream">
+                            </a>
+                        </div>
+                        <div class="product-info">
+                            <a href="#product-details"><h4>Lavender Night Cream</h4></a>
+                            <div class="price">$42.00</div>
+                            <button class="btn btn-primary add-to-cart-btn" style="width: 100%; margin-top: 1rem; padding: 0.6rem 0;">Add to Cart</button>
+                        </div>
+                    </div>
+                    <!-- Product 3 -->
+                    <div class="product-card">
+                        <div class="product-img">
+                            <a href="#product-details">
+                                <img src="https://placehold.co/300x350/fff/fb6f92?text=Facial+Cleanser" alt="Cleanser">
+                            </a>
+                        </div>
+                        <div class="product-info">
+                            <a href="#product-details"><h4>Gentle Foam Cleanser</h4></a>
+                            <div class="price">$22.00</div>
+                            <button class="btn btn-primary add-to-cart-btn" style="width: 100%; margin-top: 1rem; padding: 0.6rem 0;">Add to Cart</button>
+                        </div>
+                    </div>
+                    <!-- Product 4 -->
+                    <div class="product-card">
+                        <div class="product-img">
+                            <a href="#product-details">
+                                <img src="https://placehold.co/300x350/fff/fb6f92?text=Vitamin+C" alt="Vitamin C">
+                            </a>
+                        </div>
+                        <div class="product-info">
+                            <a href="#product-details"><h4>Vitamin C Glow Drops</h4></a>
+                            <div class="price">$38.00</div>
+                            <button class="btn btn-primary add-to-cart-btn" style="width: 100%; margin-top: 1rem; padding: 0.6rem 0;">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-2">
+                    <a href="#products" class="btn btn-outline">View All Products</a>
+                </div>
+            </div>
+
+            <!-- Testimonials -->
+            <div class="testimonials" style="background-color: var(--accent-color); padding: 5rem 0; margin-bottom: 3rem; margin-top: 4rem;">
+                <div class="container">
+                    <div class="section-title text-center mb-2">
+                        <h2>What Our Customers Say</h2>
+                    </div>
+                    <div class="testimonial-grid">
+                        <div class="testimonial-card">
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p>"The Rose Hydrating Serum completely transformed my dry, sensitive skin. I'm glowing!"</p>
+                            <h4>- Emily R.</h4>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p>"Finally found a night cream that doesn't cause breakouts. Smells amazing too."</p>
+                            <h4>- Sarah J.</h4>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                            </div>
+                            <p>"Beautiful packaging and lovely products. My skin has never felt softer."</p>
+                            <h4>- Jessica M.</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr style="border: 0; height: 1px; background: var(--secondary-color); margin: 4rem 0;">
+
+        <!-- =========================
+             2. ABOUT SECTION
+        ========================= -->
+        <section id="about">
+            <!-- About Hero -->
+            <div class="about-hero text-center" style="background-color: var(--accent-color); padding: 6rem 0 4rem; margin-bottom: 3rem;">
+                <div class="container">
+                    <h1 class="fade-in">Our Story</h1>
+                    <p class="fade-in" style="animation-delay: 0.2s; color: var(--text-medium); max-width: 600px; margin: 0 auto;">Discover the passion and philosophy behind LumiÃ¨re, where nature meets science for your perfect glow.</p>
+                </div>
+            </div>
+
+            <!-- Brand Story -->
+            <div class="brand-story container mb-3 mt-3">
+                <div class="story-grid">
+                    <div class="story-image fade-in">
+                        <img src="https://placehold.co/500x600/fecfef/4a4e69?text=Skin+Care+Journey" alt="Lumiere Brand Story" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-md);">
+                    </div>
+                    <div class="story-content fade-in" style="display: flex; flex-direction: column; justify-content: center; animation-delay: 0.2s">
+                        <h2 class="mb-1">How It All Began</h2>
+                        <p class="mb-1">LumiÃ¨re was born out of a personal struggle with sensitive, reactive skin. Frustrated by harsh chemicals and ineffective formulas, our founder started experimenting with natural botanicals in her kitchen. What started as an experiment grew into a passionate journey.</p>
+                        <p>We believe that skincare should be a therapeutic ritual. Every bottle of LumiÃ¨re is crafted with intention, combining time-tested ingredients with modern dermatology. The result? Skincare that feels like a warm embrace and delivers real, visible results.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mission & Vision -->
+            <div class="mission-vision mb-3 mt-3" style="background-color: var(--bg-color); padding: 4rem 0;">
+                <div class="container">
+                    <div class="mission-grid">
+                        <div class="mission-card">
+                            <div class="icon" style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1rem;"><i class="fa-solid fa-leaf"></i></div>
+                            <h3>Our Mission</h3>
+                            <p>To empower everyone to embrace their natural beauty through gentle, effective, and accessible skincare solutions without compromising on sustainability.</p>
+                        </div>
+                        <div class="mission-card">
+                            <div class="icon" style="font-size: 2.5rem; color: var(--warning); margin-bottom: 1rem;"><i class="fa-solid fa-eye"></i></div>
+                            <h3>Our Vision</h3>
+                            <p>To become a globally recognized brand that champions transparency, holistic skin health, and inspires a minimal yet highly effective skincare routine.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Philosophy -->
+            <div class="philosophy container mb-3 mt-3" style="margin-bottom: 6rem;">
+                <div class="section-title text-center mb-2">
+                    <h2>Our Philosophy</h2>
+                </div>
+                <div class="philosophy-grid">
+                    <div class="philosophy-item text-center">
+                        <img src="https://placehold.co/200x200/ffc2d1/2b2d42?text=Natural" alt="Natural Ingredients" style="border-radius: 50%; width: 150px; height: 150px; object-fit: cover; margin: 0 auto 1.5rem; box-shadow: var(--shadow-sm);">
+                        <h4>100% Natural</h4>
+                        <p style="color: var(--text-medium); font-size: 0.95rem;">We harness the power of plant-based ingredients, avoiding parabens, sulfates, and synthetic fragrances.</p>
+                    </div>
+                    <div class="philosophy-item text-center">
+                        <img src="https://placehold.co/200x200/ffb5a7/2b2d42?text=Cruelty+Free" alt="Cruelty Free" style="border-radius: 50%; width: 150px; height: 150px; object-fit: cover; margin: 0 auto 1.5rem; box-shadow: var(--shadow-sm);">
+                        <h4>Cruelty-Free</h4>
+                        <p style="color: var(--text-medium); font-size: 0.95rem;">We love animals. Our products are never tested on animals, and we only source ethically.</p>
+                    </div>
+                    <div class="philosophy-item text-center">
+                        <img src="https://placehold.co/200x200/ffe5ec/2b2d42?text=Effective" alt="Effective" style="border-radius: 50%; width: 150px; height: 150px; object-fit: cover; margin: 0 auto 1.5rem; box-shadow: var(--shadow-sm);">
+                        <h4>Clinically Effective</h4>
+                        <p style="color: var(--text-medium); font-size: 0.95rem;">Natural doesn't mean weak. Our formulations are tested to ensure maximum efficacy for all skin types.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr style="border: 0; height: 1px; background: var(--secondary-color); margin: 4rem 0;">
+
+        <!-- =========================
+             3. PRODUCTS SECTION
+        ========================= -->
+        <section id="products">
+            <div class="page-header text-center" style="background-color: var(--secondary-color); padding: 4rem 0;">
+                <div class="container fade-in">
+                    <h1>Our Collection</h1>
+                    <p style="color: var(--text-medium)">Nurture your skin with our full range of organic products.</p>
+                </div>
+            </div>
+
+            <div class="shop-section mt-3 mb-3">
+                <div class="container shop-container">
+                    <!-- Sidebar Filters -->
+                    <aside class="shop-sidebar fade-in" style="animation-delay: 0.1s">
+                        <div class="filter-group mb-2">
+                            <h3>Categories</h3>
+                            <ul>
+                                <li><a href="#" class="active">All Products</a></li>
+                                <li><a href="#">Face Care</a></li>
+                                <li><a href="#">Body Care</a></li>
+                                <li><a href="#">Hair Care</a></li>
+                                <li><a href="#">Gift Sets</a></li>
+                            </ul>
+                        </div>
+                        <div class="filter-group mb-2">
+                            <h3>Skin Type</h3>
+                            <ul>
+                                <li><input type="checkbox" id="skin-sens"> <label for="skin-sens">Sensitive</label></li>
+                                <li><input type="checkbox" id="skin-dry"> <label for="skin-dry">Dry</label></li>
+                                <li><input type="checkbox" id="skin-oily"> <label for="skin-oily">Oily / Acne Prone</label></li>
+                                <li><input type="checkbox" id="skin-combo"> <label for="skin-combo">Combination</label></li>
+                            </ul>
+                        </div>
+                        <div class="filter-group">
+                            <h3>Price Range</h3>
+                            <ul>
+                                <li><input type="checkbox" id="price1"> <label for="price1">Under $20</label></li>
+                                <li><input type="checkbox" id="price2"> <label for="price2">$20 - $40</label></li>
+                                <li><input type="checkbox" id="price3"> <label for="price3">$40 - $60</label></li>
+                                <li><input type="checkbox" id="price4"> <label for="price4">Over $60</label></li>
+                            </ul>
+                        </div>
+                    </aside>
+
+                    <!-- Grid & Controls -->
+                    <div class="shop-content fade-in" style="animation-delay: 0.2s">
+                        <div class="shop-controls mb-2">
+                            <span>Showing 1-6 of 24 results</span>
+                            <select class="sort-select">
+                                <option>Default Sorting</option>
+                                <option>Price: Low to High</option>
+                                <option>Price: High to Low</option>
+                                <option>Newest Arrivals</option>
+                            </select>
+                        </div>
+
+                        <div class="product-grid">
+                            <!-- Product 1 -->
+                            <div class="product-card">
+                                <div class="product-img">
+                                    <a href="#product-details">
+                                        <img src="https://placehold.co/300x350/fff/fb6f92?text=Hydrating+Serum" alt="Hydrating Serum">
+                                    </a>
+                                </div>
+                                <div class="product-info">
+                                    <a href="#product-details"><h4>Rose Hydrating Serum</h4></a>
+                                    <div class="price">$34.00</div>
+                                    <button class="btn btn-primary add-to-cart-btn" style="width: 100%; margin-top: 1rem; padding: 0.6rem 0;">Add to Cart</button>
+                                </div>
+                            </div>
+                            <!-- Product 2 -->
+                            <div class="product-card">
+                                <div class="product-img">
+                                    <div class="badge">Bestseller</div>
+                                    <a href="#product-details">
+                                        <img src="https://placehold.co/300x350/fff/fb6f92?text=Night+Cream" alt="Night Cream">
+                                    </a>
+                                </div>
+                                <div class="product-info">
+                                    <a href="#product-details"><h4>Lavender Night Cream</h4></a>
+                                    <div class="price">$42.00</div>
+                                    <button class="btn btn-primary add-to-cart-btn" style="width: 100%; margin-top: 1rem; padding: 0.6rem 0;">Add to Cart</button>
+                                </div>
+                            </div>
+                            <!-- Product 3 -->
+                            <div class="product-card">
+                                <div class="product-img">
+                                    <a href="#product-details">
+                                        <img src="https://placehold.co/300x350/fff/fb6f92?text=Facial+Cleanser" alt="Cleanser">
+                                    </a>
+                                </div>
+                                <div class="product-info">
+                                    <a href="#product-details"><h4>Gentle Foam Cleanser</h4></a>
+                                    <div class="price">$22.00</div>
+                                    <button class="btn btn-primary add-to-cart-btn" style="width: 100%; margin-top: 1rem; padding: 0.6rem 0;">Add to Cart</button>
+                                </div>
+                            </div>
+                            <!-- Product 4 -->
+                            <div class="product-card">
+                                <div class="product-img">
+                                    <a href="#product-details">
+                                        <img src="https://placehold.co/300x350/fff/fb6f92?text=Vitamin+C" alt="Vitamin C">
+                                    </a>
+                                </div>
+                                <div class="product-info">
+                                    <a href="#product-details"><h4>Vitamin C Glow Drops</h4></a>
+                                    <div class="price">$38.00</div>
+                                    <button class="btn btn-primary add-to-cart-btn" style="width: 100%; margin-top: 1rem; padding: 0.6rem 0;">Add to Cart</button>
+                                </div>
+                            </div>
+                            <!-- Product 5 -->
+                            <div class="product-card">
+                                <div class="product-img">
+                                    <a href="#product-details">
+                                        <img src="https://placehold.co/300x350/fff/fb6f92?text=Body+Butter" alt="Body Butter">
+                                    </a>
+                                </div>
+                                <div class="product-info">
+                                    <a href="#product-details"><h4>Shea Body Butter</h4></a>
+                                    <div class="price">$28.00</div>
+                                    <button class="btn btn-primary add-to-cart-btn" style="width: 100%; margin-top: 1rem; padding: 0.6rem 0;">Add to Cart</button>
+                                </div>
+                            </div>
+                            <!-- Product 6 -->
+                            <div class="product-card">
+                                <div class="product-img">
+                                    <a href="#product-details">
+                                        <img src="https://placehold.co/300x350/fff/fb6f92?text=Clay+Mask" alt="Clay Mask">
+                                    </a>
+                                </div>
+                                <div class="product-info">
+                                    <a href="#product-details"><h4>Purifying Clay Mask</h4></a>
+                                    <div class="price">$25.00</div>
+                                    <button class="btn btn-primary add-to-cart-btn" style="width: 100%; margin-top: 1rem; padding: 0.6rem 0;">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pagination -->
+                        <div class="pagination mt-3">
+                            <a href="#products" class="page-btn active">1</a>
+                            <a href="#products" class="page-btn">2</a>
+                            <a href="#products" class="page-btn">3</a>
+                            <a href="#products" class="page-btn"><i class="fa-solid fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr style="border: 0; height: 1px; background: var(--secondary-color); margin: 4rem 0;">
+
+        <!-- =========================
+             4. PRODUCT DETAILS SECTION
+        ========================= -->
+        <section id="product-details">
+            <div class="container mt-2 mb-3">
+                <div class="breadcrumbs mb-2 fade-in">
+                    <a href="#home">Home</a> &gt; <a href="#products">Face Care</a> &gt; <span>Rose Hydrating Serum</span>
+                </div>
+
+                <div class="product-details-container">
+                    <!-- Gallery -->
+                    <div class="product-gallery fade-in">
+                        <img src="https://placehold.co/500x600/fecfef/4a4e69?text=Rose+Serum+Main" alt="Main Product Image" class="main-image">
+                        <div class="thumbnail-row mt-1">
+                            <img src="https://placehold.co/100x100/fecfef/4a4e69?text=1" alt="Thumb 1" class="active">
+                            <img src="https://placehold.co/100x100/ffb5a7/4a4e69?text=2" alt="Thumb 2">
+                            <img src="https://placehold.co/100x100/ffe5ec/4a4e69?text=3" alt="Thumb 3">
+                            <img src="https://placehold.co/100x100/ffc2d1/4a4e69?text=4" alt="Thumb 4">
+                        </div>
+                    </div>
+
+                    <!-- Info -->
+                    <div class="product-info-detail fade-in" style="animation-delay: 0.2s">
+                        <h1>Rose Hydrating Serum</h1>
+                        <div class="stars mb-1" style="color: #ffd166;">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                            <span style="color: var(--text-medium); font-size: 0.9rem; margin-left: 0.5rem;">(128 reviews)</span>
+                        </div>
+                        <div class="price-large mb-1">$34.00</div>
+                        <p class="mb-2" style="color: var(--text-medium)">A lightweight, fast-absorbing serum that delivers deep hydration, leaving your skin plump, dewy, and radiant. Infused with pure rose extract and hyaluronic acid.</p>
+                        
+                        <div class="add-to-cart-wrapper mb-2">
+                            <div class="quantity-control detail-qty">
+                                <button>-</button>
+                                <input type="number" value="1" min="1" max="10">
+                                <button>+</button>
+                            </div>
+                            <a href="#cart" class="btn btn-primary add-to-cart-btn" style="text-align:center;">Add to Cart</a>
+                        </div>
+
+                        <div class="product-meta mb-2">
+                            <p><strong>Skin Type:</strong> Dry, Sensitive, Normal</p>
+                            <p><strong>Size:</strong> 30ml / 1.0 fl oz</p>
+                        </div>
+
+                        <div class="accordion border-top">
+                            <div class="accordion-item">
+                                <div class="accordion-header">Description <i class="fa-solid fa-chevron-down"></i></div>
+                                <div class="accordion-content">Our best-selling serum features a blend of botanical extracts tailored to soothe irritated skin and provide a blast of moisture. Vegan, cruelty-free, and packaged in a recyclable glass bottle.</div>
+                            </div>
+                            <div class="accordion-item">
+                                <div class="accordion-header">Ingredients <i class="fa-solid fa-chevron-down"></i></div>
+                                <div class="accordion-content" style="display:none;">Aqua, Rosa Damascena Flower Water, Sodium Hyaluronate, Glycerin, Aloe Barbadensis Leaf Juice, Phenoxyethanol.</div>
+                            </div>
+                            <div class="accordion-item">
+                                <div class="accordion-header">How to Use <i class="fa-solid fa-chevron-down"></i></div>
+                                <div class="accordion-content" style="display:none;">Apply 2-3 drops to clean, damp skin morning and night. Gently press into the face and neck until absorbed. Follow with moisturizer.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reviews -->
+                <div class="reviews-section mt-3 fade-in" style="animation-delay: 0.4s">
+                    <h2 class="mb-2">Customer Reviews</h2>
+                    <div class="review-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                        <div class="review-card">
+                            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                            <h4>Holy Grail Product!</h4>
+                            <span class="reviewer">Emily R. - May 10, 2026</span>
+                            <p>I've repurchased this 3 times now. It's the only thing that keeps my skin hydrated in winter.</p>
+                        </div>
+                        <div class="review-card">
+                            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                            <h4>Beautiful Texture</h4>
+                            <span class="reviewer">Sarah J. - April 22, 2026</span>
+                            <p>Soaks right in without any sticky residue. Layers perfectly under my SPF and makeup.</p>
+                        </div>
+                    </div>
+                    <div class="text-center mt-2">
+                        <button class="btn btn-outline">Load More Reviews</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================
+             5. LOGIN / REGISTER SECTION
+        ========================= -->
+        <section id="login" style="background-color: var(--bg-color); border-top: 1px solid var(--secondary-color);">
+            <div class="auth-container">
+                <div class="auth-card fade-in">
+                    <div class="auth-image">
+                        <img src="https://placehold.co/600x800/ffc2d1/2b2d42?text=LumiÃ¨re+Beauty" alt="Auth Background">
+                    </div>
+                    <div class="auth-content">
+                        <div class="auth-tabs">
+                            <button class="auth-tab active" data-tab="login">Login</button>
+                            <button class="auth-tab" data-tab="register">Register</button>
+                        </div>
+                        
+                        <!-- Login Form -->
+                        <form id="login-form" class="auth-form">
+                            <h2>Welcome Back</h2>
+                            <p class="mb-2" style="color: var(--text-medium)">Please enter your details to sign in.</p>
+                            
+                            <div class="form-group">
+                                <label for="login-email">Email Address</label>
+                                <input type="email" id="login-email" placeholder="you@example.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="login-password">Password</label>
+                                <input type="password" id="login-password" placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢" required>
+                            </div>
+                            <div class="form-options mb-2">
+                                <label><input type="checkbox"> Remember me</label>
+                                <a href="#" class="forgot-link">Forgot password?</a>
+                            </div>
+                            
+                            <button type="button" onclick="alert('Logged in successfully!'); window.location.hash='#home';" class="btn btn-primary" style="width: 100%">Sign In</button>
+                        </form>
+
+                        <!-- Register Form -->
+                        <form id="register-form" class="auth-form" style="display:none;">
+                            <h2>Join LumiÃ¨re</h2>
+                            <p class="mb-2" style="color: var(--text-medium)">Create an account to track orders and get rewards.</p>
+                            
+                            <div class="form-group">
+                                <label for="reg-name">Full Name</label>
+                                <input type="text" id="reg-name" placeholder="Jane Doe" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="reg-email">Email Address</label>
+                                <input type="email" id="reg-email" placeholder="you@example.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="reg-password">Password</label>
+                                <input type="password" id="reg-password" placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢" required>
+                            </div>
+                            
+                            <button type="button" onclick="alert('Account created!'); window.location.hash='#home';" class="btn btn-primary" style="width: 100%">Create Account</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================
+             6. CART SECTION
+        ========================= -->
+        <section id="cart" style="border-top: 1px solid var(--secondary-color); padding: 4rem 0;">
+            <div class="container mt-3 mb-3">
+                <h1 class="mb-2 text-center fade-in">Shopping Cart</h1>
+                
+                <div class="cart-container fade-in" style="animation-delay: 0.1s">
+                    <div class="cart-items">
+                        <div class="cart-header">
+                            <div>Product</div>
+                            <div>Quantity</div>
+                            <div>Total</div>
+                        </div>
+                        
+                        <div class="cart-item">
+                            <div class="cart-product">
+                                <a href="#product-details">
+                                    <img src="https://placehold.co/100x120/fff/fb6f92?text=Serum" alt="Rose Serum">
+                                </a>
+                                <div>
+                                    <a href="#product-details"><h4>Rose Hydrating Serum</h4></a>
+                                    <p class="price">$34.00</p>
+                                    <button class="remove-btn"><i class="fa-solid fa-trash"></i> Remove</button>
+                                </div>
+                            </div>
+                            <div class="cart-quantity">
+                                <div class="quantity-control cart-qty" style="border-color: #ddd;">
+                                    <button>-</button>
+                                    <input type="number" value="1" min="1">
+                                    <button>+</button>
+                                </div>
+                            </div>
+                            <div class="cart-total-price">
+                                <strong>$34.00</strong>
+                            </div>
+                        </div>
+
+                        <div class="cart-item">
+                            <div class="cart-product">
+                                <a href="#product-details">
+                                    <img src="https://placehold.co/100x120/fff/fb6f92?text=Night+Cream" alt="Night Cream">
+                                </a>
+                                <div>
+                                    <a href="#product-details"><h4>Lavender Night Cream</h4></a>
+                                    <p class="price">$42.00</p>
+                                    <button class="remove-btn"><i class="fa-solid fa-trash"></i> Remove</button>
+                                </div>
+                            </div>
+                            <div class="cart-quantity">
+                                <div class="quantity-control cart-qty" style="border-color: #ddd;">
+                                    <button>-</button>
+                                    <input type="number" value="2" min="1">
+                                    <button>+</button>
+                                </div>
+                            </div>
+                            <div class="cart-total-price">
+                                <strong>$84.00</strong>
+                            </div>
+                        </div>
+
+                        <div class="cart-actions mt-2">
+                            <a href="#products" class="btn btn-outline"><i class="fa-solid fa-arrow-left"></i> Continue Shopping</a>
+                            <button class="btn btn-outline" style="border-color: var(--text-light); color: var(--text-dark);">Update Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Order Summary -->
+                    <div class="cart-summary">
+                        <h3>Order Summary</h3>
+                        <div class="summary-row">
+                            <span>Subtotal</span>
+                            <span>$118.00</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Shipping</span>
+                            <span>$5.00</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Tax</span>
+                            <span>$0.00</span>
+                        </div>
+                        <div class="summary-row total-row">
+                            <span>Total</span>
+                            <span>$123.00</span>
+                        </div>
+                        <a href="#checkout" class="btn btn-primary" style="width: 100%; margin-top: 1.5rem; padding: 1rem; text-align:center;">Proceed to Checkout</a>
+                        
+                        <div class="accepted-payments text-center mt-2" style="color: var(--text-medium);">
+                            <p class="mb-1" style="font-size: 0.9rem;">Accepted Payment Methods</p>
+                            <div style="font-size: 1.5rem; gap: 10px; display: flex; justify-content: center;">
+                                <i class="fa-brands fa-cc-visa"></i>
+                                <i class="fa-brands fa-cc-mastercard"></i>
+                                <i class="fa-brands fa-cc-paypal"></i>
+                                <i class="fa-brands fa-cc-amex"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================
+             7. CHECKOUT SECTION
+        ========================= -->
+        <section id="checkout" style="background-color: var(--bg-color); padding: 4rem 0;">
+            <div class="container mt-3 mb-3">
+                <h1 class="mb-2 text-center fade-in">Checkout</h1>
+                <div class="checkout-container fade-in" style="animation-delay:0.1s">
+                    <div class="billing-details">
+                        <h3 class="mb-2">Billing Details</h3>
+                        <form id="checkout-form">
+                            <div class="form-row">
+                                <div class="form-group" style="flex:1">
+                                    <label>First Name *</label>
+                                    <input type="text" required>
+                                </div>
+                                <div class="form-group" style="flex:1">
+                                    <label>Last Name *</label>
+                                    <input type="text" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Company Name (Optional)</label>
+                                <input type="text">
+                            </div>
+                            <div class="form-group">
+                                <label>Country / Region *</label>
+                                <select class="form-control" required style="width:100%; padding:0.8rem; border:1px solid var(--secondary-color); border-radius:var(--radius-sm); font-family:var(--font-main); outline:none;">
+                                    <option value="">Select a country...</option>
+                                    <option value="US">United States</option>
+                                    <option value="UK">United Kingdom</option>
+                                    <option value="CA">Canada</option>
+                                    <option value="AU">Australia</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Street Address *</label>
+                                <input type="text" placeholder="House number and street name" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group" style="flex:1">
+                                    <label>Town / City *</label>
+                                    <input type="text" required>
+                                </div>
+                                <div class="form-group" style="flex:1">
+                                    <label>ZIP / Postal Code *</label>
+                                    <input type="text" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Phone *</label>
+                                <input type="tel" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Email Address *</label>
+                                <input type="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Order Notes (Optional)</label>
+                                <textarea style="width:100%; padding:0.8rem; border:1px solid var(--secondary-color); border-radius:var(--radius-sm); font-family:var(--font-main); outline:none; resize:vertical; min-height:100px;" placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <div class="order-panel">
+                        <h3 class="mb-2">Your Order</h3>
+                        <div class="order-summary-box">
+                            <div class="summary-row" style="font-weight:600; color:var(--text-dark); border-bottom:1px solid var(--secondary-color); padding-bottom:1rem;">
+                                <span>Product</span>
+                                <span>Total</span>
+                            </div>
+                            <div class="summary-row mt-1 border-bottom-light">
+                                <span>Rose Hydrating Serum x 1</span>
+                                <span>$34.00</span>
+                            </div>
+                            <div class="summary-row mt-1 border-bottom-light">
+                                <span>Lavender Night Cream x 2</span>
+                                <span>$84.00</span>
+                            </div>
+                            <div class="summary-row mt-1 border-bottom-light">
+                                <strong>Subtotal</strong>
+                                <span>$118.00</span>
+                            </div>
+                            <div class="summary-row mt-1 border-bottom-light">
+                                <strong>Shipping</strong>
+                                <span>$5.00</span>
+                            </div>
+                            <div class="summary-row total-row">
+                                <span>Total</span>
+                                <span style="color:var(--primary-color)">$123.00</span>
+                            </div>
+
+                            <div class="payment-methods mt-2">
+                                <div class="payment-option">
+                                    <input type="radio" id="pay-card" name="payment" value="card" checked>
+                                    <label for="pay-card">Credit or Debit Card</label>
+                                    <div class="payment-desc" id="desc-card">
+                                        <p style="font-size:0.85rem; color:var(--text-medium); margin-top:0.5rem; margin-bottom:0.5rem;">Pay securely using your credit card.</p>
+                                        <div class="card-details-mockup mt-1">
+                                            <input type="text" placeholder="Card Number" style="width:100%; padding:0.6rem; border:1px solid var(--secondary-color); border-radius:4px; margin-bottom:0.5rem; font-family:var(--font-main);">
+                                            <div style="display:flex; gap:0.5rem;">
+                                                <input type="text" placeholder="MM/YY" style="width:50%; padding:0.6rem; border:1px solid var(--secondary-color); border-radius:4px; font-family:var(--font-main);">
+                                                <input type="text" placeholder="CVC" style="width:50%; padding:0.6rem; border:1px solid var(--secondary-color); border-radius:4px; font-family:var(--font-main);">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="payment-option mt-1">
+                                    <input type="radio" id="pay-cash" name="payment" value="cash">
+                                    <label for="pay-cash">Cash on Delivery</label>
+                                    <div class="payment-desc" id="desc-cash" style="display:none;">
+                                        <p style="font-size:0.85rem; color:var(--text-medium); margin-top:0.5rem;">Pay with cash upon delivery of your order.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="submit" form="checkout-form" class="btn btn-primary mt-2" style="width: 100%; padding: 1rem;">Place Order</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================
+             8. CONTACT SECTION
+        ========================= -->
+        <section id="contact" style="border-top: 1px solid var(--secondary-color);">
+            <div class="page-header text-center" style="background-color: var(--secondary-color); padding: 4rem 0;">
+                <div class="container fade-in">
+                    <h1>Get in Touch</h1>
+                    <p style="color: var(--text-medium)">We'd love to hear from you. Our team is always here to help.</p>
+                </div>
+            </div>
+
+            <div class="container mt-3 mb-3">
+                <div class="contact-container fade-in" style="animation-delay: 0.1s">
+                    <div class="contact-info">
+                        <h3 class="mb-2">Contact Information</h3>
+                        <div class="info-item">
+                            <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <div>
+                                <h4>Our Location</h4>
+                                <p>123 Glow Avenue, Skincare District<br>New York, NY 10001</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="icon"><i class="fa-solid fa-phone"></i></div>
+                            <div>
+                                <h4>Call Us</h4>
+                                <p>+1 (555) 123-4567<br>Mon-Fri, 9am-6pm EST</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="icon"><i class="fa-solid fa-envelope"></i></div>
+                            <div>
+                                <h4>Email Us</h4>
+                                <p>hello@lumiereskin.com<br>support@lumiereskin.com</p>
+                            </div>
+                        </div>
+                        
+                        <h4 class="mt-2 mb-1">Follow Us</h4>
+                        <div class="social-links" style="justify-content: flex-start; margin-top:0;">
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                            <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-wrapper">
+                        <h3 class="mb-2">Send us a Message</h3>
+                        <form id="contact-form">
+                            <div class="form-row">
+                                <div class="form-group" style="flex:1">
+                                    <label>Your Name</label>
+                                    <input type="text" required>
+                                </div>
+                                <div class="form-group" style="flex:1">
+                                    <label>Your Email</label>
+                                    <input type="email" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Subject</label>
+                                <input type="text" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Message</label>
+                                <textarea required style="width:100%; padding:0.8rem; border:1px solid var(--secondary-color); border-radius:var(--radius-sm); font-family:var(--font-main); outline:none; resize:vertical; min-height:150px; background-color: #fafafa;"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary mt-1">Send Message</button>
+                            <div id="form-success" style="display:none; color: #2b2d42; background: #e0f8e9; padding: 1rem; border-radius: 4px; margin-top:1rem; border: 1px solid #c2edce;"><i class="fa-solid fa-circle-check" style="color:#28a745; margin-right:5px;"></i> Your message has been sent successfully! We will get back to you shortly.</div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#home" class="logo mb-1" style="display:inline-block;">Lumi<span>Ã¨re</span></a>
+                    <p>Embrace your natural glow with our organic, cruelty-free skincare formulated for sensitive skin.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Shop</h4>
+                    <ul class="footer-links">
+                        <li><a href="#products">Face Care</a></li>
+                        <li><a href="#products">Body Care</a></li>
+                        <li><a href="#products">Hair Care</a></li>
+                        <li><a href="#products">Gift Sets</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>About</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about">Our Story</a></li>
+                        <li><a href="#">Ingredients</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Join our Newsletter</h4>
+                    <p>Get 15% off your first order and exclusive skincare tips!</p>
+                    <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed!')">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                &copy; 2026 LumiÃ¨re Skincare. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (mobileMenuBtn && navLinks) {
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            // Toggle icon between bars and times
+            const icon = mobileMenuBtn.querySelector('i');
+            if (icon.classList.contains('fa-bars')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+    }
+
+    // Smooth Scrolling for anchors
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const targetId = this.getAttribute('href');
+            if(targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if(targetElement) {
+                e.preventDefault();
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                if(navLinks && navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    const icon = mobileMenuBtn.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            }
+        });
+    });
+
+    // Mock Cart Number Update (when clicking Add to Cart buttons)
+    const cartCountElement = document.querySelector('.cart-count');
+    const addToCartBtns = document.querySelectorAll('.add-to-cart-btn');
+    let currentCartCount = parseInt(cartCountElement?.innerText || '0');
+
+    addToCartBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            // Simple animation
+            btn.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                btn.style.transform = 'scale(1)';
+            }, 150);
+
+            // Update cart count
+            currentCartCount++;
+            if(cartCountElement) {
+                cartCountElement.innerText = currentCartCount;
+                
+                // Pop animation on cart icon
+                cartCountElement.style.transform = 'scale(1.5)';
+                setTimeout(() => {
+                    cartCountElement.style.transform = 'scale(1)';
+                }, 200);
+            }
+            
+            // Optional: alert or toast
+            // alert('Added to cart!');
+        });
+    });
+
+    // Navbar Scroll Effect
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.style.boxShadow = '0 5px 15px rgba(255, 143, 171, 0.15)';
+            navbar.style.padding = '0.5rem 0';
+        } else {
+            navbar.style.boxShadow = 'var(--shadow-sm)';
+            navbar.style.padding = '0';
+        }
+    });
+});
+
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            /* -----------------------------
+               Single Page Navigation Active State
+               ----------------------------- */
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    // Adjusted for navbar
+                    if(window.scrollY >= (sectionTop - 150)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                if(current) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if(link.getAttribute('href') === `#${current}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+
+            /* -----------------------------
+               Product Details JS 
+               ----------------------------- */
+            const mainImg = document.querySelector('.main-image');
+            const thumbnails = document.querySelectorAll('.thumbnail-row img');
+            if(mainImg && thumbnails) {
+                thumbnails.forEach(thumb => {
+                    thumb.addEventListener('click', () => {
+                        mainImg.src = thumb.src;
+                        thumbnails.forEach(t => t.classList.remove('active'));
+                        thumb.classList.add('active');
+                    });
+                });
+            }
+
+            const accHeaders = document.querySelectorAll('.accordion-header');
+            accHeaders.forEach(header => {
+                header.addEventListener('click', () => {
+                    const content = header.nextElementSibling;
+                    const icon = header.querySelector('i');
+                    if (content.style.display === 'none') {
+                        content.style.display = 'block';
+                        icon.classList.remove('fa-chevron-down');
+                        icon.classList.add('fa-chevron-up');
+                    } else {
+                        content.style.display = 'none';
+                        icon.classList.remove('fa-chevron-up');
+                        icon.classList.add('fa-chevron-down');
+                    }
+                });
+            });
+
+            /* -----------------------------
+               Quantity Adjustments 
+               ----------------------------- */
+            const qControls = document.querySelectorAll('.quantity-control');
+            qControls.forEach(ctrl => {
+                const btns = ctrl.querySelectorAll('button');
+                const input = ctrl.querySelector('input');
+                if(btns.length === 2 && input) {
+                    btns[0].addEventListener('click', () => {
+                        let val = parseInt(input.value);
+                        if(val > 1) input.value = val - 1;
+                    });
+                    btns[1].addEventListener('click', () => {
+                        let val = parseInt(input.value);
+                        input.value = val + 1;
+                    });
+                }
+            });
+
+            /* -----------------------------
+               Login/Register Tabs
+               ----------------------------- */
+            const authTabs = document.querySelectorAll('.auth-tab');
+            const loginForm = document.getElementById('login-form');
+            const registerForm = document.getElementById('register-form');
+
+            if(authTabs && loginForm && registerForm) {
+                authTabs.forEach(tab => {
+                    tab.addEventListener('click', () => {
+                        authTabs.forEach(t => t.classList.remove('active'));
+                        tab.classList.add('active');
+
+                        if(tab.dataset.tab === 'login') {
+                            loginForm.style.display = 'block';
+                            registerForm.style.display = 'none';
+                        } else {
+                            loginForm.style.display = 'none';
+                            registerForm.style.display = 'block';
+                        }
+                    });
+                });
+            }
+
+            /* -----------------------------
+               Checkout Toggle
+               ----------------------------- */
+            const payCard = document.getElementById('pay-card');
+            const payCash = document.getElementById('pay-cash');
+            const descCard = document.getElementById('desc-card');
+            const descCash = document.getElementById('desc-cash');
+
+            if(payCard && payCash && descCard && descCash) {
+                payCard.addEventListener('change', () => {
+                    if(payCard.checked) {
+                        descCard.style.display = 'block';
+                        descCash.style.display = 'none';
+                    }
+                });
+
+                payCash.addEventListener('change', () => {
+                    if(payCash.checked) {
+                        descCard.style.display = 'none';
+                        descCash.style.display = 'block';
+                    }
+                });
+
+                const checkoutForm = document.getElementById('checkout-form');
+                checkoutForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    alert('Thank you! Your order has been placed securely.');
+                    window.location.hash = '#home';
+                });
+            }
+
+            /* -----------------------------
+               Contact Form JS
+               ----------------------------- */
+            const contactForm = document.getElementById('contact-form');
+            const successMsg = document.getElementById('form-success');
+            
+            if(contactForm && successMsg) {
+                contactForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    successMsg.style.display = 'block';
+                    contactForm.reset();
+                    setTimeout(() => {
+                        successMsg.style.display = 'none';
+                    }, 5000);
+                });
+                
+                const textarea = contactForm.querySelector('textarea');
+                if(textarea) {
+                    textarea.addEventListener('focus', () => {
+                        textarea.style.borderColor = 'var(--primary-color)';
+                        textarea.style.backgroundColor = 'white';
+                    });
+                    textarea.addEventListener('blur', () => {
+                        textarea.style.borderColor = 'var(--secondary-color)';
+                        textarea.style.backgroundColor = '#fafafa';
+                    });
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+

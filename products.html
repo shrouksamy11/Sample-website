@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products | Lumière Skincare</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Lumi<span>ère</span></a>
+            
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="products.html" class="active">Products</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            
+            <div class="nav-icons">
+                <a href="login.html" class="nav-icon" title="Account"><i class="fa-regular fa-user"></i></a>
+                <a href="cart.html" class="nav-icon" title="Cart">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <div class="mobile-menu-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Header -->
+        <section class="page-header text-center" style="background-color: var(--secondary-color); padding: 4rem 0;">
+            <div class="container fade-in">
+                <h1>Our Collection</h1>
+                <p style="color: var(--text-medium)">Nurture your skin with our full range of organic products.</p>
+            </div>
+        </section>
+
+        <!-- Product Shop Section -->
+        <section class="shop-section mt-3 mb-3">
+            <div class="container shop-container">
+                <!-- Sidebar Filters -->
+                <aside class="shop-sidebar fade-in" style="animation-delay: 0.1s">
+                    <div class="filter-group mb-2">
+                        <h3>Categories</h3>
+                        <ul>
+                            <li><a href="#" class="active">All Products</a></li>
+                            <li><a href="#">Face Care</a></li>
+                            <li><a href="#">Body Care</a></li>
+                            <li><a href="#">Hair Care</a></li>
+                            <li><a href="#">Gift Sets</a></li>
+                            <li><a href="#">Accessories</a></li>
+                        </ul>
+                    </div>
+                    <div class="filter-group mb-2">
+                        <h3>Skin Type</h3>
+                        <ul>
+                            <li><input type="checkbox" id="skin-sens"> <label for="skin-sens">Sensitive</label></li>
+                            <li><input type="checkbox" id="skin-dry"> <label for="skin-dry">Dry</label></li>
+                            <li><input type="checkbox" id="skin-oily"> <label for="skin-oily">Oily / Acne Prone</label></li>
+                            <li><input type="checkbox" id="skin-combo"> <label for="skin-combo">Combination</label></li>
+                        </ul>
+                    </div>
+                    <div class="filter-group">
+                        <h3>Price Range</h3>
+                        <ul>
+                            <li><input type="checkbox" id="price1"> <label for="price1">Under $20</label></li>
+                            <li><input type="checkbox" id="price2"> <label for="price2">$20 - $40</label></li>
+                            <li><input type="checkbox" id="price3"> <label for="price3">$40 - $60</label></li>
+                            <li><input type="checkbox" id="price4"> <label for="price4">Over $60</label></li>
+                        </ul>
+                    </div>
+                </aside>
+
+                <!-- Grid & Controls -->
+                <div class="shop-content fade-in" style="animation-delay: 0.2s">
+                    <div class="shop-controls mb-2">
+                        <span>Showing 1-6 of 24 results</span>
+                        <select class="sort-select">
+                            <option>Default Sorting</option>
+                            <option>Price: Low to High</option>
+                            <option>Price: High to Low</option>
+                            <option>Newest Arrivals</option>
+                            <option>Customer rating</option>
+                        </select>
+                    </div>
+
+                    <div class="product-grid">
+                        <!-- Product 1 -->
+                        <div class="product-card">
+                            <div class="product-img">
+                                <a href="product-details.html">
+                                    <img src="https://placehold.co/300x350/fff/fb6f92?text=Hydrating+Serum" alt="Hydrating Serum">
+                                </a>
+                            </div>
+                            <div class="product-info">
+                                <a href="product-details.html"><h4>Rose Hydrating Serum</h4></a>
+                                <div class="price">$34.00</div>
+                                <button class="btn btn-primary add-to-cart-btn" style="width: 100%; margin-top: 1rem; padding: 0.6rem 0;">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- Product 2 -->
+                        <div class="product-card">
+                            <div class="product-img">
+                                <div class="badge">Bestseller</div>
+                                <a href="product-details.html">
+                                    <img src="https://placehold.co/300x350/fff/fb6f92?text=Night+Cream" alt="Night Cream">
+                                </a>
+                            </div>
+                            <div class="product-info">
+                                <a href="product-details.html"><h4>Lavender Night Cream</h4></a>
+                                <div class="price">$42.00</div>
+                                <button class="btn btn-primary add-to-cart-btn" style="width: 100%; margin-top: 1rem; padding: 0.6rem 0;">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- Product 3 -->
+                        <div class="product-card">
+                            <div class="product-img">
+                                <a href="product-details.html">
+                                    <img src="https://placehold.co/300x350/fff/fb6f92?text=Facial+Cleanser" alt="Cleanser">
+                                </a>
+                            </div>
+                            <div class="product-info">
+                                <a href="product-details.html"><h4>Gentle Foam Cleanser</h4></a>
+                                <div class="price">$22.00</div>
+                                <button class="btn btn-primary add-to-cart-btn" style="width: 100%; margin-top: 1rem; padding: 0.6rem 0;">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- Product 4 -->
+                        <div class="product-card">
+                            <div class="product-img">
+                                <a href="product-details.html">
+                                    <img src="https://placehold.co/300x350/fff/fb6f92?text=Vitamin+C" alt="Vitamin C">
+                                </a>
+                            </div>
+                            <div class="product-info">
+                                <a href="product-details.html"><h4>Vitamin C Glow Drops</h4></a>
+                                <div class="price">$38.00</div>
+                                <button class="btn btn-primary add-to-cart-btn" style="width: 100%; margin-top: 1rem; padding: 0.6rem 0;">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- Product 5 -->
+                        <div class="product-card">
+                            <div class="product-img">
+                                <a href="product-details.html">
+                                    <img src="https://placehold.co/300x350/fff/fb6f92?text=Body+Butter" alt="Body Butter">
+                                </a>
+                            </div>
+                            <div class="product-info">
+                                <a href="product-details.html"><h4>Shea Body Butter</h4></a>
+                                <div class="price">$28.00</div>
+                                <button class="btn btn-primary add-to-cart-btn" style="width: 100%; margin-top: 1rem; padding: 0.6rem 0;">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- Product 6 -->
+                        <div class="product-card">
+                            <div class="product-img">
+                                <a href="product-details.html">
+                                    <img src="https://placehold.co/300x350/fff/fb6f92?text=Clay+Mask" alt="Clay Mask">
+                                </a>
+                            </div>
+                            <div class="product-info">
+                                <a href="product-details.html"><h4>Purifying Clay Mask</h4></a>
+                                <div class="price">$25.00</div>
+                                <button class="btn btn-primary add-to-cart-btn" style="width: 100%; margin-top: 1rem; padding: 0.6rem 0;">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="pagination mt-3">
+                        <a href="#" class="page-btn active">1</a>
+                        <a href="#" class="page-btn">2</a>
+                        <a href="#" class="page-btn">3</a>
+                        <a href="#" class="page-btn"><i class="fa-solid fa-chevron-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo mb-1" style="display:inline-block;">Lumi<span>ère</span></a>
+                    <p>Embrace your natural glow with our organic, cruelty-free skincare formulated for sensitive skin.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Shop</h4>
+                    <ul class="footer-links">
+                        <li><a href="products.html">Face Care</a></li>
+                        <li><a href="products.html">Body Care</a></li>
+                        <li><a href="products.html">Hair Care</a></li>
+                        <li><a href="products.html">Gift Sets</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>About</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">Our Story</a></li>
+                        <li><a href="#">Ingredients</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Join our Newsletter</h4>
+                    <p>Get 15% off your first order and exclusive skincare tips!</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                &copy; 2026 Lumière Skincare. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>

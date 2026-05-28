@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart | Lumière</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Lumi<span>ère</span></a>
+            
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="products.html">Products</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            
+            <div class="nav-icons">
+                <a href="login.html" class="nav-icon" title="Account"><i class="fa-regular fa-user"></i></a>
+                <a href="cart.html" class="nav-icon active" title="Cart">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="cart-count">2</span>
+                </a>
+                <div class="mobile-menu-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container mt-3 mb-3">
+            <h1 class="mb-2 text-center fade-in">Shopping Cart</h1>
+            
+            <div class="cart-container fade-in" style="animation-delay: 0.1s">
+                <div class="cart-items">
+                    <!-- Header -->
+                    <div class="cart-header">
+                        <div>Product</div>
+                        <div>Quantity</div>
+                        <div>Total</div>
+                    </div>
+                    
+                    <!-- Item 1 -->
+                    <div class="cart-item">
+                        <div class="cart-product">
+                            <a href="product-details.html">
+                                <img src="https://placehold.co/100x120/fff/fb6f92?text=Serum" alt="Rose Serum">
+                            </a>
+                            <div>
+                                <a href="product-details.html"><h4>Rose Hydrating Serum</h4></a>
+                                <p class="price">$34.00</p>
+                                <button class="remove-btn"><i class="fa-solid fa-trash"></i> Remove</button>
+                            </div>
+                        </div>
+                        <div class="cart-quantity">
+                            <div class="quantity-control" style="border-color: #ddd;">
+                                <button>-</button>
+                                <input type="number" value="1" min="1">
+                                <button>+</button>
+                            </div>
+                        </div>
+                        <div class="cart-total-price">
+                            <strong>$34.00</strong>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="cart-item">
+                        <div class="cart-product">
+                            <a href="product-details.html">
+                                <img src="https://placehold.co/100x120/fff/fb6f92?text=Night+Cream" alt="Night Cream">
+                            </a>
+                            <div>
+                                <a href="product-details.html"><h4>Lavender Night Cream</h4></a>
+                                <p class="price">$42.00</p>
+                                <button class="remove-btn"><i class="fa-solid fa-trash"></i> Remove</button>
+                            </div>
+                        </div>
+                        <div class="cart-quantity">
+                            <div class="quantity-control" style="border-color: #ddd;">
+                                <button>-</button>
+                                <input type="number" value="2" min="1">
+                                <button>+</button>
+                            </div>
+                        </div>
+                        <div class="cart-total-price">
+                            <strong>$84.00</strong>
+                        </div>
+                    </div>
+
+                    <div class="cart-actions mt-2">
+                        <a href="products.html" class="btn btn-outline"><i class="fa-solid fa-arrow-left"></i> Continue Shopping</a>
+                        <button class="btn btn-outline" style="border-color: var(--text-light); color: var(--text-dark);">Update Cart</button>
+                    </div>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="cart-summary">
+                    <h3>Order Summary</h3>
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span>$118.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Shipping</span>
+                        <span>$5.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Tax</span>
+                        <span>$0.00</span>
+                    </div>
+                    <div class="summary-row total-row">
+                        <span>Total</span>
+                        <span>$123.00</span>
+                    </div>
+                    <a href="checkout.html" class="btn btn-primary" style="width: 100%; margin-top: 1.5rem; padding: 1rem;">Proceed to Checkout</a>
+                    
+                    <div class="accepted-payments text-center mt-2" style="color: var(--text-medium);">
+                        <p class="mb-1" style="font-size: 0.9rem;">Accepted Payment Methods</p>
+                        <div style="font-size: 1.5rem; gap: 10px; display: flex; justify-content: center;">
+                            <i class="fa-brands fa-cc-visa"></i>
+                            <i class="fa-brands fa-cc-mastercard"></i>
+                            <i class="fa-brands fa-cc-paypal"></i>
+                            <i class="fa-brands fa-cc-amex"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer container ... -->
+    <footer class="footer">
+        <!-- omitted inner for brevity, keeping actual text full -->
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo mb-1" style="display:inline-block;">Lumi<span>ère</span></a>
+                    <p>Embrace your natural glow with our organic, cruelty-free skincare formulated for sensitive skin.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Shop</h4>
+                    <ul class="footer-links">
+                        <li><a href="products.html">Face Care</a></li>
+                        <li><a href="products.html">Body Care</a></li>
+                        <li><a href="products.html">Hair Care</a></li>
+                        <li><a href="products.html">Gift Sets</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>About</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">Our Story</a></li>
+                        <li><a href="#">Ingredients</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Join our Newsletter</h4>
+                    <p>Get 15% off your first order and exclusive skincare tips!</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                &copy; 2026 Lumière Skincare. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+             // Mock quantity up/down
+             const qControls = document.querySelectorAll('.cart-item .quantity-control');
+             qControls.forEach(ctrl => {
+                 const btns = ctrl.querySelectorAll('button');
+                 const input = ctrl.querySelector('input');
+                 if(btns.length === 2 && input) {
+                     btns[0].addEventListener('click', () => {
+                         let val = parseInt(input.value);
+                         if(val > 1) input.value = val - 1;
+                     });
+                     btns[1].addEventListener('click', () => {
+                         let val = parseInt(input.value);
+                         input.value = val + 1;
+                     });
+                 }
+             });
+        });
+    </script>
+</body>
+</html>
